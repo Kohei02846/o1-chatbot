@@ -6,9 +6,9 @@ import {
 } from "eventsource-parser";
 
 export const defaultConfig = {
-  model: "gpt-3.5-turbo",
+  model: "gpt-o1",
   temperature: 0.5,
-  max_tokens: 2048,
+  max_tokens: 4096,
   top_p: 1,
   frequency_penalty: 0,
   presence_penalty: 0.6,
@@ -27,7 +27,7 @@ export const getOpenAICompletion = async (
 
   const response = await fetch("https://api.openai.com/v1/chat/completions", {
     headers: {
-      Authorization: `Bearer ${token}`,
+      "api-key": token,
       "Content-Type": "application/json",
     },
     method: "POST",

@@ -2,7 +2,6 @@ import Link from "next/link";
 import React from "react";
 import { MdAdd, MdDeleteOutline, MdBuild } from "react-icons/md";
 import { useOpenAI } from "@/context/OpenAIProvider";
-import Github from "../../misc/Github";
 import ThemeButton from "./buttons/ThemeButton";
 import ButtonContainer from "./buttons/ButtonContainer";
 import Conversations from "./conversation/Conversations";
@@ -46,11 +45,6 @@ export default function ChatSidebar({}: Props) {
 
           <ThemeButton />
         </div>
-
-        <Github />
-        <span className="text-center text-primary/80">
-          Made with ❤️ by Nashex
-        </span>
       </div>
     </div>
   );
