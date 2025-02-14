@@ -2,5 +2,7 @@
     "appService.zipIgnorePattern": [
         "node_modules{,/**}",
         ".vscode{,/**}"
-    ]
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/1e3b9393-dd94-45b0-a656-e6a384e40ba7/resourceGroups/meiji-o1-demo/providers/Microsoft.Web/sites/chatbot-o1",
+    "appService.deploySubpath": "."
 }
