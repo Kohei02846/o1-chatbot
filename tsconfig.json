@@ -27,7 +27,6 @@
     "types": [
       "react",
       "react/jsx-runtime",
-      "node"
     ],
     "typeRoots": [
       "./types",
