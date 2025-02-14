@@ -5,6 +5,12 @@ import {
   ReconnectInterval,
 } from "eventsource-parser";
 
+const endpoint = process.env.NEXT_PUBLIC_AZURE_OPENAI_ENDPOINT;
+const apiKey = process.env.NEXT_PUBLIC_AZURE_OPENAI_API_KEY;
+const deploymentName = process.env.NEXT_PUBLIC_AZURE_OPENAI_DEPLOYMENT_NAME;
+
+if (!apiKey) throw new Error('Azure OpenAI API key is not defined');
+
 export const defaultConfig = {
   model: "gpt-o1",
   temperature: 0.5,
@@ -25,9 +31,9 @@ export const getOpenAICompletion = async (
   const encoder = new TextEncoder();
   const decoder = new TextDecoder();
 
-  const response = await fetch("https://api.openai.com/v1/chat/completions", {
+  const response = await fetch(`${endpoint}/openai/deployments/${deploymentName}/chat/completions?api-version=2024-02-15-preview`, {
     headers: {
-      "api-key": token,
+      "api-key": apiKey,
       "Content-Type": "application/json",
     },
     method: "POST",
